@@ -35,7 +35,7 @@ module Vcard
 
       # Encode a field.
       def Field.encode0(group, name, params={}, value="") # :nodoc:
-        line = ""
+        line = String.new
 
         # A reminder of the line format:
         #   [<group>.]<name>;<pname>=<pvalue>,<pvalue>:<value>
@@ -80,7 +80,7 @@ module Vcard
       end
 
       def Field.value_str(value) # :nodoc:
-        line = ""
+        line = String.new
         case value
         when Date
           line << ::Vcard.encode_date(value)
